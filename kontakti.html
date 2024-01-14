@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+</html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Exploro Kosovën</title>
+    <link rel="stylesheet" href="kontakt.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+
+
+    <!--shiriti i menyjve naviguese-->
+
+    <nav>
+
+        <label class="logo">Exploro Kosovën</label>
+        <ul>
+            <li><a class="aktiv" href="ballina.html">Ballina</a></li>
+            <li><a class="#rrethnesh" href="rrethnesh.html">Rreth nesh</a></li>
+            <li><a class="#monumentet kulturore" href="monumentetkulturore.html">Monumentet Kulturore</a></li>
+            <li><a class="#bukurite natyrore" href="bukuritenatyrore.html">Bukuritë Natyrore</a></li>
+            <li><a class="#restaurantet" href="restaurantet.html">Restaurantet</a></li>
+            <li><a class="#galeri" href="galeri.html">Galeri</a></li>
+            <li><a class="#keshilla per udhtim" href="keshillaperudhetim.html">Keshilla per udhtimë</a></li>
+            <li><a class="#kontakti" href="kontakti.html">Kontakti</a></li>
+            <li><a class="#blog" href="blog.html">Festivale</a></li>
+            <li><a class="#harta" href="harta.html">Harta</a></li>
+
+        </ul>
+
+    </nav>
+
+    <form id="contactForm" onsubmit="return validateForm()">
+        <div class="container">
+            <h1 class="text-center">Kontakti</h1>
+            <label for="name">Emri:</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Shkruani emrin tuaj">
+
+            <label for="email">Email:</label>
+            <input type="text" class="form-control" id="email" name="email" placeholder="Shkruani email-in tuaj">
+
+            <label for="message">Mesazhi:</label>
+            <textarea class="form-control" id="message" name="message" placeholder="Shkruani mesazhin tuaj"></textarea>
+
+            <button type="submit">Dërgo</button>
+        </div>
+    </form>
+
+    <script src="kontakt.js">
+        function validateForm() {
+            var name = document.getElementById("name").value;
+            var email = document.getElementById("email").value;
+            var message = document.getElementById("message").value;
+
+            // Validimi i emrit
+            if (name == "") {
+                alert("Ju lutem shkruani emrin tuaj.");
+                return false;
+            }
+
+            // Validimi i email-it
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert("Ju lutem shkruani një email të vlefshëm.");
+                return false;
+            }
+
+            // Validimi i mesazhit
+            if (message == "") {
+                alert("Ju lutem shkruani një mesazh.");
+                return false;
+            }
+
+            // Kontrollo @ në adresën e email-it
+            if (email.indexOf("@") == -1) {
+                alert("Adresa e email-it duhet të përmbajë @.");
+                return false;
+            }
+
+            alert("Forma u dërgua me sukses!");
+            return true;
+        }
+
+    </script>
+</body>
+
+</html>
